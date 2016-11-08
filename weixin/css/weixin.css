@@ -1,0 +1,307 @@
+body,
+div,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+tr,
+td,
+form,
+input,
+select,
+textarea,
+span,
+img,
+a,
+em,
+strong,
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "宋体";
+  font-size: 12px;
+  color: #000000;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 14px;
+}
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  color: #009999;
+}
+.clear {
+  clear: both;
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+.fill {
+  width: 100%;
+  height: 100%;
+}
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+body,
+html,
+#wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  height: 100%;
+}
+header {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+header img {
+  width: 100%;
+}
+header .tit {
+  height: 40px;
+  width: 100%;
+  background: #393A3F;
+  color: #fff;
+  line-height: 45px;
+  position: relative;
+}
+header .tit h3 {
+  width: 60%;
+  padding-left: 1rem;
+}
+header .tit img {
+  width: 45px;
+  position: absolute;
+}
+header .tit .search {
+  right: 45px;
+  top: 0;
+}
+header .tit .jia {
+  right: 0px;
+  top: 0;
+}
+section {
+  position: relative;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+section > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-transform: translateX(100%);
+}
+section > div:first-child {
+  -webkit-transform: translateX(0);
+}
+section #shouye dl {
+  width: 100%;
+  display: -webkit-box;
+  height: 59px;
+  margin-top: 10px;
+  border-bottom: 1px #F6F6F6 solid;
+}
+section #shouye dl dt {
+  width: 25%;
+  text-align: center;
+}
+section #shouye dl dt img {
+  width: 65%;
+}
+section #shouye dl .cont {
+  width: 55%;
+  margin-top: 10px;
+}
+section #shouye dl .cont p {
+  color: #A7A7A7;
+  padding-top: 5px;
+}
+section #shouye dl .date {
+  width: 20%;
+  color: #D8D8D8;
+  margin-top: 10px;
+  text-align: center;
+}
+section #tongxun {
+  width: 100%;
+  height: 100%;
+}
+section #tongxun .tongxunlist {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+}
+section #tongxun .tit {
+  background: #EBEBEB;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+}
+section #tongxun .fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+}
+section #tongxun dl {
+  width: 100%;
+  display: -webkit-box;
+  height: 50px;
+  margin-top: 10px;
+  border-bottom: 1px #F6F6F6 solid;
+}
+section #tongxun dl dt {
+  width: 18%;
+  text-align: center;
+}
+section #tongxun dl dt img {
+  width: 65%;
+}
+section #tongxun dl dd {
+  width: 70%;
+  margin-top: 10px;
+}
+section #tongxun dl dd p {
+  color: #A7A7A7;
+  padding-top: 5px;
+}
+section #pengyou,
+section #wode {
+  width: 100%;
+  height: 100%;
+}
+section #pengyou h3,
+section #wode h3 {
+  background: #EBEBEB;
+  height: 15px;
+  line-height: 15px;
+  padding-left: 10px;
+}
+section #pengyou dl,
+section #wode dl {
+  width: 100%;
+  display: -webkit-box;
+  height: 30px;
+  margin-top: 5px;
+  border-bottom: 1px #F6F6F6 solid;
+}
+section #pengyou dl dt,
+section #wode dl dt {
+  width: 18%;
+  text-align: center;
+}
+section #pengyou dl dt img,
+section #wode dl dt img {
+  width: 50%;
+}
+section #pengyou dl dd,
+section #wode dl dd {
+  width: 70%;
+  margin-top: 5px;
+}
+section #pengyou dl dd p,
+section #wode dl dd p {
+  color: #A7A7A7;
+  padding-top: 5px;
+}
+section #wode .dl1 {
+  width: 100%;
+  display: -webkit-box;
+  height: 59px;
+  margin-top: 10px;
+  border-bottom: 1px #F6F6F6 solid;
+}
+section #wode .dl1 dt {
+  width: 25%;
+  text-align: center;
+}
+section #wode .dl1 dt img {
+  width: 65%;
+}
+section #wode .dl1 .cont {
+  width: 55%;
+  margin-top: 10px;
+}
+section #wode .dl1 .cont p {
+  color: #A7A7A7;
+  padding-top: 5px;
+}
+section #wode .dl1 .date {
+  width: 20%;
+  color: #D8D8D8;
+  margin-top: 10px;
+  text-align: center;
+}
+section #wode .dl1 .date img {
+  width: 50%;
+}
+footer {
+  position: relative;
+  height: 45px;
+  background: #FCFCFC;
+}
+footer ul {
+  width: 100%;
+  display: -webkit-box;
+  height: 45px;
+}
+footer ul li {
+  width: 25%;
+  text-align: center;
+}
+footer ul li img {
+  width: 50%;
+}
+aside {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  display: none;
+}
+aside a {
+  display: block;
+}
