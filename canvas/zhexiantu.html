@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折线图</title>
+	<style type="text/css">
+		#can{
+			display: block;
+			border: 1px solid #000;
+			margin: 20px auto;
+
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600" height="400"></canvas>
+</body>
+<script type="text/javascript">
+	function draw(can,data){
+		var o=document.getElementById(can);
+		var can=o.getContext("2d");
+
+		//y轴竖线
+		var ystart=[50,50],yend=[50,350];
+		var ystep=(o.width-100)/(data.x.length-1);
+
+		//x轴横线
+		var xstart=[50,50],xend=[550,50];
+		var xstep=(o.height-100)/(data.y.length-1);
+
+		can.fillText(data.yUnit,30,30);
+
+		//x轴横线
+		for (var i = 0; i < data.y.length; i++) {
+			
+			can.beginPath();
+			can.moveTo(xstart[0],xstart[1]);
+			can.lineTo(xend[0],xend[1]);
+			can.strokeStyle="#000";
+			can.stroke();
+			can.fillStyle="#000";
+			can.fillText(data.y[data.y.length-1-i],xstart[0]-20,xstart[1]+5);
+			xstart[1]+=xstep;
+			xend[1]+=xstep;
+		};
+
+		
+		for (var i = 0; i < data.x.length; i++) {
+		//y轴竖线
+			can.beginPath();
+			can.moveTo(ystart[0],ystart[1]);
+			can.lineTo(yend[0],yend[1]);
+
+			can.strokeStyle="#000";
+			can.stroke();
+			can.fillStyle="#000";
+			can.fillText(data.x[i],yend[0]-5,yend[1]+15);
+			can.closePath();
+			//折线red
+			can.beginPath();
+			can.moveTo(yend[0],yend[1]-data.datas[0].da[i]);
+			can.lineTo(yend[0]+ystep,yend[1]-data.datas[0].da[i+1]);
+			can.strokeStyle=data.datas[0].color;
+			can.stroke();
+			//红色圆点
+			can.beginPath();
+			can.arc(yend[0],yend[1]-data.datas[0].da[i],5,0,Math.PI*2,false);
+			can.strokeStyle=data.datas[0].color;
+			can.stroke();
+			can.fillStyle="#fff";
+			can.fill();
+			can.closePath();
+			
+			//折线blue
+			can.beginPath();
+			can.moveTo(yend[0],yend[1]-data.datas[1].da[i]);
+			can.lineTo(yend[0]+ystep,yend[1]-data.datas[1].da[i+1]);
+			can.strokeStyle=data.datas[1].color;
+
+			can.stroke();
+			//蓝色圆点
+			can.beginPath();
+			can.arc(yend[0],yend[1]-data.datas[1].da[i],5,0,Math.PI*2,false);
+			can.strokeStyle=data.datas[1].color;
+			can.stroke();
+			can.fillStyle="#fff";
+			can.fill();
+			can.closePath();
+
+			
+
+
+
+
+			ystart[0]+=ystep;
+			yend[0]+=ystep;
+			
+		};
+
+
+		
+
+	}
+
+
+
+	function init(){
+		var data={
+		x:["10月","11月","12月","1月","2月","3月"],
+		y:[0,50,100,150,200,250,300],
+		xUnit:"月",
+		yUnit:"万元/m2",
+		datas:[{"color":"red",da:[20,30,50,70,30,56]},{"color":"blue",da:[40,134,67,150,70,90]}]
+		};
+
+		draw("can",data);
+
+	};
+	window.onload=init;
+
+</script>
+</html>

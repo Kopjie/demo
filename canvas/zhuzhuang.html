@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#can{
+			display: block;
+			background: pink;
+			margin: 20px auto;
+
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600" height="400"></canvas>
+</body>
+<script type="text/javascript">
+	function draw(can,data){
+		var o=document.getElementById(can);
+		var can=o.getContext("2d");
+		//横线
+		can.moveTo(50,300);
+		can.lineTo(550,300);
+		can.stroke();
+		//竖线
+		can.beginPath();
+		can.moveTo(50,100);
+		can.lineTo(50,300);
+		can.stroke();
+
+		var xstep=100;
+		var xstart=100;
+		//x轴
+		for (var i = 0; i < data.x.length; i++) {
+			//科目
+			can.fillText(data.x[i],100+i*xstep,300+20);
+
+			//hui
+			can.beginPath();
+			can.moveTo(xstart+10,300);
+			can.lineTo(xstart+10,300-data.hui[i]);
+			can.lineWidth=30;
+			can.strokeStyle="#ccc";
+			can.stroke();
+
+			//blue
+			can.beginPath();
+			can.moveTo(xstart+10,300);
+			can.lineTo(xstart+10,300-data.blue[i]);
+			can.lineWidth=25;
+			can.strokeStyle="blue";
+			can.stroke();
+
+			//数字
+			can.fillText(data.top[i],xstart,300-data.hui[i]-10);
+
+			
+
+			xstart+=xstep;
+
+
+			
+		};
+		var ystep=50;
+		//y轴
+		for (var i = 0; i < data.y.length; i++) {
+			can.fillText(data.y[i],30,100+i*ystep+10);
+		};
+	}
+
+
+	function init(){
+		var data={
+		x:["语文","数学","英语","化学","物理"],
+		y:[200,150,100,50],
+		top:["180/200","160/180","140/160","120/150","180/200"],
+		blue:[180,160,140,120,180],
+		hui:[200,180,160,150,200]
+		
+		};
+
+		draw("can",data);
+	}
+
+	window.onload=init;
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饼状图</title>
+	<style type="text/css">
+		#can{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+	function draw(canvasid,data_arr,color_arr,text_arr){
+		var o=document.getElementById(canvasid);
+		var can=o.getContext("2d");
+
+		var radius=o.height/2-100;
+		var ox=radius+100;
+		var oy=radius+100;
+
+		var start=0,end=0;
+
+		//图例
+		var posx=ox+radius-20, posy=oy+radius;
+		//矩形宽高
+		var wid=20, heig=10;
+		//文字开始位置
+		var txtx=posx+30, txty=posy+11;
+
+		for (var i = 0; i < data_arr.length; i++) {
+			end=data_arr[i]*Math.PI*2+end;
+			can.beginPath();
+			can.fillStyle=color_arr[i];
+			can.moveTo(ox,oy);
+			can.arc(ox,oy,radius,start,end,false);
+			can.fill();
+			can.closePath();
+			start=end;
+			can.fillRect(posx,posy+i*20,wid,heig);
+			var str=text_arr[i]+data_arr[i]*100+"%";
+			can.font="bold 15px 微软雅黑";
+			can.fillText(str,txtx,txty+i*20);
+		};
+	}
+
+
+	function init(){
+		var data_arr=[0.3,0.4,0.08,0.22];
+		var color_arr=["blue","pink","yellow","red"];
+		var text_arr=["第一季","第二季","第三季","第四季"];
+
+		draw("can",data_arr,color_arr,text_arr);
+	}
+	window.onload=init;
+</script>
+</html>

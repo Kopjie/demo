@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美国国旗</title>
+	<style type="text/css">
+		#big{
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="big" width=400 height=300></canvas>
+</body>
+<script type="text/javascript">
+	var o=document.getElementById('big');
+	var can=o.getContext("2d");
+
+	var x=0,y=25;
+	var step=50;
+	for (var i = 0; i < 6; i++) {
+		can.beginPath();
+		can.moveTo(x,y);
+		can.lineTo(400,y);
+		can.lineWidth=25;
+		can.strokeStyle="#fff";
+		can.stroke();
+		y+=step;
+
+
+	};
+
+	can.beginPath();
+	can.fillStyle="blue";
+	can.fillRect(0,0,250,180)
+
+	
+	//can.lineWidth=1;var n=0;
+		var dx=20,dy=20;
+		var s=10;
+		var xstep=35;
+		var ystep=25;
+for (var k = 0; k < 7; k++) {
+		
+	var dy=20+k*ystep;
+	if (k%2==1) {
+		mm=6;
+	}else{
+		mm=7;
+	}
+	for (var j = 0; j <mm; j++) {
+		can.beginPath();
+		can.fillStyle="#fff";
+		if (k%2==1) {
+			var dx=40+j*xstep;
+		}else{
+			var dx=20+j*xstep;
+		}
+		
+		var xx=Math.sin(0);
+		var yy=Math.cos(0);
+		var dig=Math.PI/5*4;
+		for (var i = 0; i < 5; i++) {
+			var xx=Math.sin(i*dig);
+			var yy=Math.cos(i*dig);
+			can.lineTo(dx+xx*s,dy+yy*s);
+
+		};
+		can.closePath();
+		can.fill();
+	};
+};
+	
+	//can.stroke();
+
+	
+	
+
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五行六列</title>
+	<style type="text/css">
+		#can{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+	
+	window.onload=function(){
+		var o=document.getElementById('can');
+		var can=o.getContext("2d");
+		for (var i = 1; i < 7; i++) {
+			var oy=i*50;
+			can.moveTo(50,oy);
+			can.lineTo(590,oy);
+			can.stroke();
+
+		};
+		for (var i = 0; i < 8; i++) {
+			var ox=i*90+50;
+			can.moveTo(ox,50);
+			can.lineTo(ox,300);
+			can.stroke();
+
+		};
+	}
+</script>
+</html>

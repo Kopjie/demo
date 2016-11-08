@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>八卦</title>
+	<style type="text/css">
+		#can{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var o=document.getElementById('can');
+		var can=o.getContext("2d");
+		//can.moveTo(300,300);
+		can.arc(300,300,100,Math.PI*2/4,Math.PI/2*3,false)
+		//can.stroke();
+		can.fillStyle="#fff";
+		can.fill();
+		can.closePath();
+
+
+		can.beginPath();
+		can.arc(300,300,100,Math.PI/2*3,Math.PI*2/4,false)
+		//can.stroke();
+		can.fillStyle="#000";
+		can.fill();
+		can.closePath();
+
+		can.beginPath();
+		can.arc(300,350,50,Math.PI/2*3,Math.PI*2/4,false)
+		//can.stroke();
+		can.fillStyle="#fff";
+		can.fill();
+		can.closePath();
+
+
+		can.beginPath();
+		can.arc(300,250,50,Math.PI*2/4,Math.PI/2*3,false)
+		//can.stroke();
+		can.fillStyle="#000";
+		can.fill();
+		can.closePath();
+
+		can.beginPath();
+		can.arc(300,250,10,0,Math.PI*2,false)
+		//can.stroke();
+		can.fillStyle="#fff";
+		can.fill();
+		can.closePath();
+
+		can.beginPath();
+		can.arc(300,350,10,0,Math.PI*2,false)
+		//can.stroke();
+		can.fillStyle="#000";
+		can.fill();
+		can.closePath();
+
+		
+	}
+
+</script>
+<script type="text/javascript">
+	var a=b=3;
+	console.log(a);
+	console.log(b);
+</script>
+</html>
